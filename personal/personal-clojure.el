@@ -4,4 +4,14 @@
 
 (add-hook 'clojure-mode-hook 'fci-mode)
 
+(defun cider-reset ()
+  (interactive)
+  (save-buffer)
+  (cider-switch-to-relevant-repl-buffer)
+  (goto-char (point-max))
+  (insert "(user/reset)")
+  (cider-repl-return))
+
+(define-key prelude-mode-map (kbd "C-c r") 'cider-reset)
+
 ;;; personal-clojure.el ends here
