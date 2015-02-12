@@ -12,6 +12,7 @@
   (insert "(user/reset)")
   (cider-repl-return))
 
-(define-key prelude-mode-map (kbd "C-c r") 'cider-reset)
+(add-hook 'clojure-mode-hook
+  (lambda () (define-key prelude-mode-map (kbd "C-c r") 'cider-reset)))
 
 ;;; personal-clojure.el ends here
