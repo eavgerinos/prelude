@@ -5,5 +5,8 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
 
+;; Enable caching
+(setq projectile-enable-caching t)
+
 (provide 'personal-init)
 ;;; personal-init.el ends here
