@@ -1,6 +1,5 @@
 (global-linum-mode t)
-;;(set-frame-font "Source Code Pro-14" nil t)
-(setq default-frame-alist '((font . "Source Code Pro-14")))
+(setq default-frame-alist '((font . "Fira Mono-14")))
 
 ;; enable monokai theme
 (load-theme 'monokai t)
