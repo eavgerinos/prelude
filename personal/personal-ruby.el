@@ -5,24 +5,25 @@
 ;; Require extra ruby packages
 (prelude-require-packages '(flymake-ruby))
 (prelude-require-packages '(rbenv))
-;;(prelude-require-packages '(robe))
+(prelude-require-packages '(robe))
 
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
-;;(add-hook 'ruby-mode-hook 'robe-mode)
-;;(add-hook 'ruby-mode-hook 'company-mode)
-
-;;(defadvice inf-ruby-console-auto (before activate-rbenv-for-robe activate)
-;;  (rbenv-use-corresponding))
-
-;;(global-company-mode t)
-;;(push 'company-robe company-backends)
+(add-hook 'ruby-mode-hook 'robe-mode)
 
 ;; Sane indentation
 (setq ruby-deep-indent-paren nil)
 
-(global-rbenv-mode)
+;; Ruby shell binding
+(define-key prelude-mode-map (kbd "C-c R r") 'inf-ruby)
 
-(rbenv-use-corresponding)
+;; Activate corresponding Ruby
+(define-key prelude-mode-map (kbd "C-c R a") 'rbenv-use-corresponding)
+
+;; Robe auto-triggers rbenv-use-corresponding
+(defadvice inf-ruby-console-auto (before activate-rbenv-for-robe activate)
+  (rbenv-use-corresponding))
+
+(push 'company-robe company-backends)
 
 (provide 'personal-ruby)
 ;;; personal-ruby.el ends here
