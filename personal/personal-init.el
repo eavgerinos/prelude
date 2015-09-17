@@ -1,6 +1,9 @@
 ;;; personal-init.el --- Custom emacs configuration
 
 ;;; Code:
+;; Start server
+(server-start)
+
 ;; Swap super with meta (useful on  OS X)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
