@@ -7,4 +7,7 @@
 ;; disable scroll bar
 (scroll-bar-mode -1)
 
+;; smooth mouse scrolling
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 5))
+      mouse-wheel-progressive-speed) nil
 ;;; personal-ui.el ends here.
