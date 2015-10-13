@@ -6,9 +6,13 @@
 (prelude-require-packages '(flymake-ruby))
 (prelude-require-packages '(rbenv))
 (prelude-require-packages '(robe))
+(prelude-require-packages '(rspec-mode))
 
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
 (add-hook 'ruby-mode-hook 'robe-mode)
+
+;; Hook for debugging in rspec
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
 
 ;; Sane indentation
 (setq ruby-deep-indent-paren nil)
