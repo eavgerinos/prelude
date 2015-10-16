@@ -5,8 +5,8 @@
 (server-start)
 
 ;; Swap super with meta (useful on  OS X)
-(setq mac-command-modifier 'meta)
-(setq mac-option-modifier 'super)
+;; (setq mac-command-modifier 'meta)
+;; (setq mac-option-modifier 'super)
 
 ;; Enable caching
 (setq projectile-enable-caching t)
